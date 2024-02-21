@@ -68,6 +68,8 @@
           objectIds: ids,
           retrieveObjects: true
         };
+      } else if ( settings.searchEngine === 'trieve') {
+        // TODO - implement
       }
 
       self.config = {

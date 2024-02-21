@@ -11,9 +11,11 @@ angular.module('o19s.splainer-search')
     'SearchApiSearcherFactory',
     'activeQueries',
     'defaultSolrConfig',
+    'TrieveSearcherFactory',
     function searchSvc(
       SolrSearcherFactory,
       EsSearcherFactory,
+      TrieveSearcherFactory,
       VectaraSearcherFactory,
       AlgoliaSearcherFactory,
       SearchApiSearcherFactory,
@@ -71,6 +73,8 @@ angular.module('o19s.splainer-search')
           searcher = new AlgoliaSearcherFactory(options);
         } else if ( searchEngine === 'searchapi') {
           searcher = new SearchApiSearcherFactory(options);
+        } else if ( searchEngine === 'trieve') {
+          searcher = new TrieveSearcherFactory(options);
         }
 
         return searcher;

@@ -64,6 +64,8 @@
                 }]
               }
             ]};
+        } else if ( self.searchEngine === 'searchapi' ) {
+          args = { q: ['*:*'] };
         }
 
         self.searcher = searchSvc.createSearcher(
